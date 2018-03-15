@@ -1,0 +1,99 @@
+
+<!-- start footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form method="post" action="/email">
+                    @csrf
+                    <div class="form" data-aos="fade-up" data-aos-duration="3000">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group m-b-0">
+                                    <input type="text" value="" name="name" placeholder="your name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="form-group m-b-0">
+                                    <input type="text" value="" name="email" placeholder="your email" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <button class="btn btn-primary btn-round btn-block margin-0">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+                </form>
+
+        <div class="row" data-aos="fade-up">
+            <div class="col-lg-4 col-md-12">
+                <div class="fcard about">
+                    <h5 class="title">About Hospitals</h5>
+                    <p>The relentless service of Hospitals in the past 25 years taken health care to the most modern
+                        levels in the region catering to urban & rural.</p>
+                    <p>A Health Care Provider of Western Approach, Hospitals is the most trusted multispecialty
+                        hospital.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="fcard links">
+                    <h5 class="title">Usefull Links</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Consultants</a></li>
+                                <li><a href="#">Working Hours</a></li>
+                                <li><a href="#">Procedures</a></li>
+                                <li><a href="#">Special Offers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Healthy Foods</a></li>
+                                <li><a href="#">Appointments</a></li>
+                                <li><a href="#">Latest News</a></li>
+                                <li><a href="#">Certificates</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="fcard contact links">
+                    <h5 class="title">Contact Details</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="zmdi zmdi-pin"></i>Park Drive, Varick Str NY 10012, USA</li>
+                        <li><i class="zmdi zmdi-email"></i>Getwell@Hospitals.com</li>
+                        <li><i class="zmdi zmdi-phone"></i>(123) 0200 12345 & 7890</li>
+                        <li><i class="zmdi zmdi-time"></i>Mon-Friday: 9am to 18pm</li>
+                        <li><i class="zmdi zmdi-time"></i>Sat-Sunday: 10am to 16pm</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <small>Copyright &copy; 2018 Oreo Theme by <a href="http://thememakker.com/" target="_blank">ThemeMakker</a>
+                    </small>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <div class="up"><a href="#header"><i class="zmdi zmdi-caret-up-circle"></i></a></div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="social float-md-right"><a href="#"><i class="zmdi zmdi-facebook m-r-10"></i></a> <a
+                                href="#"><i class="zmdi zmdi-twitter m-r-10"></i></a> <a href="#"><i
+                                    class="zmdi zmdi-dribbble m-r-10"></i></a> <a href="#"><i
+                                    class="zmdi zmdi-behance m-r-10"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
