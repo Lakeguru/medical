@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Contact;
 use App\Mail;
+use App\Blog;
 use Illuminate\Http\Request;
 
 class ViewsController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
+    
     public  function index()
     {
         return view('Pages.index');
@@ -91,6 +98,12 @@ class ViewsController extends Controller
     public function pricelist()
     {
         return view('Pricelists.pricelist');
+    }
+
+    public function image()
+    {
+        $blogs  = Blog::latest()->get()->toarray();
+        return view('Blogs.info',compact('blogs'));
     }
 
     

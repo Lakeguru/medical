@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 class DoctorsController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index']);
+
+    }
+    
     public function index()
     {
         return view('Doctors.add_doctor');
@@ -29,8 +35,19 @@ class DoctorsController extends Controller
             'martial_status' => 'required',
             'DOB' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'doctor_id'=>'required'
         ]);
+
+        $filenamewithExt = $request->file('image')->getClientOriginalName();
+        $filename = pathinfo($filenamewithExt, PATHINFO_FILENAME);
+        // RETURN $filename;
+        $extension = $request->file('image')->getClientOriginalExtension();
+        //create new filename
+
+        $filenametostore = $filename .'_'.time().'.'.$extension;
+        //upload image
+
+        $path= $request->file('image')->storeAs('public/doctor',$filenametostore);
+
 
         $doctor = new Doctor();
         $doctor->first_name = $request->first_name;
@@ -42,18 +59,24 @@ class DoctorsController extends Controller
         $doctor->nationality = $request->nationality;
         $doctor->martial_status = $request->martial_status;
         $doctor->DOB = $request->DOB;
-        $doctor->image = $request->image;
+        // $doctor->image = $request->image;
+        $doctor->image = '/images'.$request->$filename;
         $doctor->save();
-        $doctor= doctor_id;
-        // $doctor = $doctor->id;
-
-        dd($request->all());
-        
         
         Toastr::success('Doctors  successfully Created.','Success',["positionClass" => "toast-top-right"]);
         return redirect()->route('dashboard')->with('success','Welcome to Lake Hospital Dashboard');
-
         
+    }
+
+    public function all_doctor()
+    {
+        $doctors =Doctor::latest()->get();
+        return view('Doctors.all_doctor',compact('doctors'));
+    }
+
+    public function image()
+    {
+
     }
 
 }

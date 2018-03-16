@@ -21,9 +21,9 @@ class DashboardController extends Controller
      public function get()
      {
         $doctorCountall = Doctor::count();
-        $doctorCounttoday = Doctor::count()->dailyAt('13:00');	
+        // $doctorCounttoday = Doctor::count()->dailyAt('13:00');	
          
-         return view('Dashboard.index',compact('doctorCountall','doctorCounttoday'));
+         return view('Dashboard.index',compact('doctorCountall'));
      }
     // public function index()
     // {

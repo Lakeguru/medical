@@ -18,7 +18,7 @@
             <div class="icon"><i class="zmdi zmdi-instagram"></i></div>
             <div class="content">
                 <div class="text">Department</div>
-                {{--  <div class="number">{{ $doctorCounttoday }}</div>  --}}
+                <div class="number">{{ $departmentcount }}</div>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
             <div class="icon"><i class="zmdi zmdi-twitter"></i></div>
             <div class="content">
                 <div class="text">Today Patient</div>
-                <div class="number">31</div>
+                <div class="number">{{ $patientcount}}</div>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
             <div class="icon"><i class="zmdi zmdi-google"></i></div>
             <div class="content">
                 <div class="text">Total Patient</div>
-                <div class="number">254</div>
+                <div class="number">{{$patienttoday}}</div>
             </div>
         </div>
     </div>
@@ -54,10 +54,13 @@
             <div class="icon"><i class="zmdi zmdi-behance"></i></div>
             <div class="content">
                 <div class="text">Total Payment</div>
-                <div class="number">121</div>
+                <div class="number">{{$paymentcount}}</div>
             </div>
         </div>
     </div>
+</div>
+<div class="body">
+    <div id="line_chart" class="graph"></div>
 </div>
 
 

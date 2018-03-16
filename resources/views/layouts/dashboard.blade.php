@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="assetss/css/main.css">
     <link rel="stylesheet" href="assetss/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
     <link rel="stylesheet" href="assetss/css/color_skins.css">
 </head>
 <body class="theme-cyan">
@@ -116,6 +117,8 @@
 <script src="assetss/plugins/dropzone/dropzone.js"></script> <!-- Dropzone Plugin Js -->
 <script src="assetss/js/pages/rtl.js"></script>
 <script src="assetss/plugins/chartjs/Chart.bundle.min.js"></script> <!-- Chart Plugins Js -->
+<script src="assetss/js/pages/blog/blog.js"></script>
+
 
 
 </body>

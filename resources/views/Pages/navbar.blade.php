@@ -36,7 +36,7 @@
                                    aria-expanded="false">Blog</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{ route('blog') }}">Blog</a>
-                                    <a class="dropdown-item" href="{{ route('blogdetails') }}">Blog Detail</a>
+                                    {{--  <a class="dropdown-item" href="{{ route('blogdetails') }}">Blog Detail</a>  --}}
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
