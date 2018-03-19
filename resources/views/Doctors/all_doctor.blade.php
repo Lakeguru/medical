@@ -46,7 +46,7 @@
                                     <div class="card xl-blue member-card doctor">
                                         <div class="body">
                                             <div class="member-thumb">
-                                                <img src="/storage/profiles/{{$doctor->image}}" class="img-fluid" alt="profile-image">
+                                                <img src="{{ asset("images/$doctor->image") }}"  class="img-fluid" alt="profile-image">
                                             </div>
                                             <div class="detail">
                                                 <h4 class="m-b-0">Dr. {{$doctor->first_name}}</h4>

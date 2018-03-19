@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Auth;
 use App\Patient;
 use Validator;
+use Storage;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 

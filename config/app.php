@@ -216,7 +216,6 @@ return [
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
 
-
         
 
     ],

@@ -69,6 +69,7 @@ class BlogController extends Controller
             //upload image
 
             $path= $request->file('image')->storeAs('public/images',$filenametostore);
+            
 
             $blog = new Blog();
             $blog->title = $request->title;

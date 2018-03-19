@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 class SessionController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('guest')->except(['index']);
+
+    }
+    
     public function login()
     {
         return view('auth.login');

@@ -11,12 +11,6 @@ use Illuminate\Http\Request;
 class ViewsController extends Controller
 {
     //
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
-    
     public  function index()
     {
         return view('Pages.index');

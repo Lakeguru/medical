@@ -11,8 +11,6 @@
 |
 */
 
-
-
 Route::group(['middleware' => ['guest']], function () {
     Route::get('/','ViewsController@index')->name('index');
     Route::get('service','ViewsController@service')->name('service');
@@ -30,7 +28,7 @@ Route::group(['middleware' => ['guest']], function () {
     Route::get('blogdetails','BlogController@blogdetails')->name('blogdetails');
     Route::get('post','PostController@createpost');
     Route::post('post','PostController@postcreate');
-//Route::post('postdetails','BlogController@postdetails')->name('postdetails')
+    //Route::post('postdetails','BlogController@postdetails')->name('postdetails')
     Route::post('comment','BlogController@comment')->name('comment');
     Route::get('login','SessionController@login')->name('login');
     Route::post('login','SessionController@postlogin')->name('signin');
@@ -46,7 +44,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('add_doctor','DoctorsController@index')->name('add_doctor');
     Route::post('add_doctor','DoctorsController@create')->name('postadd_doctor');
     Route::get('all_doctor','DoctorsController@all_doctor')->name('all_doctor');
-    Route::get('/image/{doctor}','DoctorsController@image');
+    Route::get('/doctor/{id}/{image}','DoctorsController@image');
     Route::get('add_patient','PatientController@index')->name('add_patient');
     Route::post('add_patient','PatientController@add_patient')->name('postadd_patient');
     Route::get('all_patient','PatientController@all_patient')->name('all_patient');

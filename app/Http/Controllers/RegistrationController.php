@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 class RegistrationController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('guest')->except(['index']);
+
+    }
+    
     public function signup()
     {
         return view('auth.register');

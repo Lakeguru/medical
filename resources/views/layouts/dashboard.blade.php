@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="assetss/css/main.css">
     <link rel="stylesheet" href="assetss/css/rtl.css">
-    <link rel="stylesheet" href="assets/css/blog.css">
+    <link rel="stylesheet" href="assetss/css/blog.css">
     <link rel="stylesheet" href="assetss/css/color_skins.css">
 </head>
 <body class="theme-cyan">

@@ -6,6 +6,8 @@ use App\Doctor;
 use Carbon\Carbon;
 use Brian2694\Toastr\Facades\Toastr;
 use Validator;
+use Cloudder;
+use Storage;
 use Illuminate\Http\Request;
 
 class DoctorsController extends Controller
@@ -16,7 +18,7 @@ class DoctorsController extends Controller
         $this->middleware('auth')->except(['index']);
 
     }
-    
+
     public function index()
     {
         return view('Doctors.add_doctor');
@@ -37,18 +39,35 @@ class DoctorsController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $filenamewithExt = $request->file('image')->getClientOriginalName();
-        $filename = pathinfo($filenamewithExt, PATHINFO_FILENAME);
-        // RETURN $filename;
-        $extension = $request->file('image')->getClientOriginalExtension();
-        //create new filename
+        // $filenamewithExt = $request->file('image')->getClientOriginalName();
+        // $filename = pathinfo($filenamewithExt, PATHINFO_FILENAME);
+        // // RETURN $filename;
+        // $extension = $request->file('image')->getClientOriginalExtension();
+        // //create new filename
 
-        $filenametostore = $filename .'_'.time().'.'.$extension;
-        //upload image
+        // $filenametostore = $filename .'_'.time().'.'.$extension;
+        // //upload image
+        // // $destinationPath = public_path('images');
+        // $path= $request->file('image')->storeAs('doctor');
 
-        $path= $request->file('image')->storeAs('public/doctor',$filenametostore);
+        //     return $path;
+
+			
+            // dd($profile_image);
+            // Cloudder::upload($image, null);
+            // list($width, $height) = getimagesize($image);
+            // $file_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+            
+            // $profile->image = $file_url;
+
+            $file = $request->file('image') ;
+            
+            $fileName = $file->getClientOriginalName() ;
+            $destinationPath = public_path().'/images/' ;
+            $file->move($destinationPath,$fileName);
 
 
+                        
         $doctor = new Doctor();
         $doctor->first_name = $request->first_name;
         $doctor->last_name = $request->last_name;
@@ -59,8 +78,9 @@ class DoctorsController extends Controller
         $doctor->nationality = $request->nationality;
         $doctor->martial_status = $request->martial_status;
         $doctor->DOB = $request->DOB;
-        // $doctor->image = $request->image;
-        $doctor->image = '/images'.$request->$filename;
+        // $doctor->image = $filenamewithExt;
+        $doctor->image = $fileName ;
+        // $profile_image = $request->image;
         $doctor->save();
         
         Toastr::success('Doctors  successfully Created.','Success',["positionClass" => "toast-top-right"]);
@@ -74,9 +94,10 @@ class DoctorsController extends Controller
         return view('Doctors.all_doctor',compact('doctors'));
     }
 
-    public function image()
+    public function image(Doctor $doctor)
     {
-
+        $doctors =Doctor::all();
+        return view('Doctors.all_doctor',compact('doctors'));
     }
 
 }
